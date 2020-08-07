@@ -14,15 +14,23 @@ from tkinter import messagebox, simpledialog, Tk
 '''
 
 if __name__ == '__main__':
+    window = Tk()
+    window.withdraw()
     score = 0
-    riddle1 = simpledialog.askstring(None, "What has six faces, but does not wear makeup, has twenty-one eyes, but cannot see? What is it?")
+    riddle1 = simpledialog.askstring(None, "How do you spell COW in thirteen letters?")
     riddle2 = simpledialog.askstring(None, "David's father has three sons: Snap, Crackle, and _____?")
     riddle3 = simpledialog.askstring(None, "What is more useful when it is broken?")
 
-    if riddle1 == "a die":
+    if riddle1.lower() == "see o double you":
         score+=1
-    if riddle2 == "david":
+    else:
+        messagebox.showinfo(None, "The correct answer is 'see o double you'")
+    if riddle2.lower() == "david":
         score+=1
-    if riddle3 == "an egg":
+    else:
+        messagebox.showinfo(None, "The correct answer is 'david'")
+    if 'egg' in riddle3.lower():
         score+=1
+    else:
+        messagebox.showinfo(None, "The correct answer is 'an egg'")
     messagebox.showinfo(None, score)
